@@ -14,6 +14,8 @@ titleFont = pygame.font.SysFont("Arial", 100, True)
 font = pygame.font.SysFont("Arial", 50)
 sponsorFont = pygame.font.SysFont("Arial", 20)
 
+svarBoxes.append(svarBox(500,500,screen))
+
 def mainMenu():
     global done
     done = False
@@ -32,6 +34,12 @@ def mainMenu():
             screen.blit(mouseText, (0, windowHeight-20))
 
             titleText = titleFont.render("DuoPython", False, (255, 255, 255))
+
+            if pygame.mouse.get_pressed()[0]:
+                for box in svarBoxes:
+                    if box.isMouseOver(mouseX, mouseY):
+                        box.x=mouseX-box.width/2
+                        box.y=mouseY-box.height/2
 
             # Level select button
             if mouseX <= 245 and 210 >= mouseY >= 150:
@@ -76,7 +84,8 @@ def mainMenu():
             screen.blit(titleText, (0, 0))
             screen.blit(levelSelectText, (0, 150))
             screen.blit(quitText, (0, 225))
-
+            for ting in svarBoxes: #mouse box
+                ting.draw()        #mouse box
             pygame.display.flip()
             clock.tick(60)
 
