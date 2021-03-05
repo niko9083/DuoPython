@@ -8,8 +8,10 @@ class svarBox:
         self.height =69
         self.color = (255, 255, 255)
         self.theScreen = screen
+
     def draw(self):
         pygame.draw.rect(self.theScreen, self.color, pygame.Rect(self.x, self.y, self.width, self.height))
+
     def isMouseOver(self, mouseX, mouseY):
         if mouseX>self.x and mouseX< self.x + self.width and mouseY>self.y and mouseY<self.y + self.height:
             return True
