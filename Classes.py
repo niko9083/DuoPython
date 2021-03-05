@@ -1,6 +1,5 @@
 import pygame
 
-
 class svarBox:
     def __init__(self, x, y, screen):
         self.x = x

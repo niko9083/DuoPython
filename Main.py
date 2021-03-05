@@ -69,6 +69,7 @@ def main():
                 else:
                     whiles = font.render(" > While loops ", False, (255, 255, 255))
 
+                # Blyat' the levels
                 screen.blit(ifs, (300, 150))
                 screen.blit(fors, (300, 225))
                 screen.blit(whiles, (300, 300))
