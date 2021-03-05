@@ -1,4 +1,6 @@
 import pygame
+from Classes import svarBox
+svarBoxes = []
 import time
 
 pygame.init()
@@ -22,6 +24,7 @@ def mainMenu():
                 done = True
                 continue
 
+            screen = pygame.display.set_mode((windowWidth, windowHeight))
             screen.fill((0, 0, 0))
 
             mouseX, mouseY = pygame.mouse.get_pos()
