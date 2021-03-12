@@ -32,7 +32,7 @@ def main():
 
             mouseX, mouseY = pygame.mouse.get_pos()
             mouseText = sponsorFont.render(f"{mouseX} ; {mouseY}", False, (255, 255, 255))
-            screen.blit(mouseText, (0, windowHeight - 20))
+            # screen.blit(mouseText, (0, windowHeight - 20))
 
             titleText = titleFont.render("DuoPython", False, (255, 255, 255))
 
@@ -51,28 +51,35 @@ def main():
                 levelSelectText = font.render(" Level Select ", False, (255, 255, 255))
 
             if levels:
-                # If statement button
+                # Hello world button
                 if 300 <= mouseX <= 580 and 150 <= mouseY <= 200:
+                    hw = font.render(" > Hello World! ", False, (0, 0, 0), (255, 255, 255))
+                else:
+                    hw = font.render(" > Hello World! ", False, (255, 255, 255))
+
+                # If statement button
+                if 300 <= mouseX <= 580 and 225 <= mouseY <= 275:
                     ifs = font.render(" > If statemens ", False, (0, 0, 0), (255, 255, 255))
                 else:
                     ifs = font.render(" > If statemens ", False, (255, 255, 255))
 
                 # For loops button
-                if 300 <= mouseX <= 530 and 225 <= mouseY <= 275:
+                if 300 <= mouseX <= 530 and 300 <= mouseY <= 350:
                     fors = font.render(" > For loops ", False, (0, 0, 0), (255, 255, 255))
                 else:
                     fors = font.render(" > For loops ", False, (255, 255, 255))
 
                 # While loops button
-                if 300 <= mouseX <= 570 and 300 <= mouseY <= 350:
+                if 300 <= mouseX <= 570 and 375 <= mouseY <= 425:
                     whiles = font.render(" > While loops ", False, (0, 0, 0), (255, 255, 255))
                 else:
                     whiles = font.render(" > While loops ", False, (255, 255, 255))
 
                 # Blyat' the levels
-                screen.blit(ifs, (300, 150))
-                screen.blit(fors, (300, 225))
-                screen.blit(whiles, (300, 300))
+                screen.blit(hw, (300, 150))
+                screen.blit(ifs, (300, 225))
+                screen.blit(fors, (300, 300))
+                screen.blit(whiles, (300, 375))
 
             # Quit button
             if mouseX <= 120 and 285 >= mouseY > 225:
